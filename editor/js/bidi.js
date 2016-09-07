@@ -19,6 +19,7 @@ RED.bidi = (function() {
     var LRE = "\u202A",
         RLE = "\u202B",
         PDF = "\u202C";
+    var calendarType = "";
         
     function isRTLValue(stringValue) {
         for (var ch in stringValue) {
@@ -112,11 +113,21 @@ RED.bidi = (function() {
         textDir = dir;
     }
     
+    function setCalendarType(val) {
+    	calendarType = val;
+    }
+    
+    function getCalendarType() {
+    	return calendarType;
+    }
+    
     return {
         setTextDirection: setTextDirection,
         enforceTextDirectionOnPage: enforceTextDirectionOnPage,
         enforceTextDirectionWithUCC: enforceTextDirectionWithUCC,
         resolveBaseTextDir: resolveBaseTextDir,
-        initInputEvents: initInputEvents
+        initInputEvents: initInputEvents,
+        setCalendarType: setCalendarType,
+        getCalendarType: getCalendarType
     }
 })();

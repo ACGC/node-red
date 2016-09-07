@@ -2111,6 +2111,9 @@ RED.view = (function() {
             redraw();
             RED.palette.refresh();         
         },
+        toggleCalendar: function(value) {
+            RED.bidi.setCalendarType(value);
+        },
         scale: function() {
             return scaleFactor;
         },
